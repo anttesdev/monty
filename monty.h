@@ -55,6 +55,7 @@ void match(char *opcode, stack_t **stack, unsigned int line_number);
 void free_tokens(char **tokens);
 void push(stack_t **stack, unsigned int line_number);
 void pall(stack_t **stack, unsigned int line_number);
+void pint(stack_t **stack, unsigned int line_number);
 
 
 
