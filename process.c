@@ -1,6 +1,5 @@
 #include "monty.h"
 
-char **tokens;
 /**
  * process - a function to process a monty script line by line
  * @file: the monty script to be processed
@@ -13,25 +12,14 @@ int process(FILE *file)
 	size_t n = 0;
 	unsigned int line_number = 0;
 	stack_t *stack = NULL;
-	ssize_t line = getline(&lineptr, &n, file);
+	ssize_t line;
 
-	while (line == -1)
-	{
-		if (feof(file))
-		{
-			free(lineptr);
-			return (EXIT_SUCCESS);
-		}
-		else
-		{
-			free(lineptr);
-			return (EXIT_FAILURE);
-		}
-	}
-	while (line != -1)
+	while ((line = getline(&lineptr, &n, file)) != -1)
 	{
 		line_number++;
 		tokens = tokenize(lineptr);
+		if (line > 0 && lineptr[line - 1] == '\n')
+			lineptr[line - 1] = '\0';
 		if (tokens[0] != NULL)
 		{
 			match(tokens[0], &stack, line_number);
@@ -39,7 +27,14 @@ int process(FILE *file)
 		free_tokens(tokens);
 	}
 	free(lineptr);
-	return (EXIT_SUCCESS);
+	if (feof(file))
+	{
+		return (EXIT_SUCCESS);
+	}
+	else
+	{
+		return (EXIT_FAILURE);
+	}
 }
 
 

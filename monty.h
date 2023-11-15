@@ -44,7 +44,7 @@ typedef struct instruction_s
 
 
 /*Global Variable*/
-extern char **tokens;
+char **tokens;
 
 
 

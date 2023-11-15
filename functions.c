@@ -1,6 +1,5 @@
 #include "monty.h"
 
-char **tokens;
 
 /**
  * push - Pushes a value onto the stack
@@ -12,7 +11,7 @@ void push(stack_t **stack, unsigned int line_number)
 {
 	stack_t *new_node;
 	int value;
-	
+
 	if (tokens[1] == NULL)
 	{
 		fprintf(stderr, "L%d: usage: push integer\n", line_number);

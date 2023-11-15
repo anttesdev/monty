@@ -2,8 +2,8 @@
 
 /**
  * tokenize - tokenizes the lines of a monty script
- * lineptr - a string full of arguments
- * Return - tokens of lineptr(array)
+ * @lineptr: a string full of arguments
+ * Return: tokens of lineptr(array)
  */
 
 char **tokenize(char *lineptr)

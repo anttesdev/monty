@@ -11,8 +11,7 @@ void match(char *opcode, stack_t **stack, unsigned int line_number)
 {
 	int i;
 
-	instruction_t instructions[] =
-	{
+	instruction_t instructions[] = {
 		{"push", push},
 		{NULL, NULL}
 	};
