@@ -15,3 +15,14 @@ void add(stack_t **stack, unsigned int line_number)
 	(*stack)->next->n += (*stack)->n;
 	pop(stack, line_number);
 }
+
+/**
+ * nop - Doesn't do anything
+ * @stack: Double pointer to the stack
+ * @line_number: Line number in the Monty script
+ */
+void nop(stack_t **stack, unsigned int line_number)
+{
+	(void)stack;
+	(void)line_number;
+}
