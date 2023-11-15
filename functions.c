@@ -35,7 +35,6 @@ void push(stack_t **stack, unsigned int line_number)
 	if (*stack != NULL)
 		(*stack)->prev = new_node;
 	*stack = new_node;
-	printf("Pushed %d onto the stack at line %u\n", value, line_number);
 }
 /**
  * pall - Prints all the values on the stack.
