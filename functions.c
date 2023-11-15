@@ -1,5 +1,6 @@
 #include "monty.h"
 
+char **tokens;
 
 /**
  * push - Pushes a value onto the stack

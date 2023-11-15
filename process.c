@@ -1,5 +1,6 @@
 #include "monty.h"
 
+char **tokens;
 /**
  * process - a function to process a monty script line by line
  * @file: the monty script to be processed
