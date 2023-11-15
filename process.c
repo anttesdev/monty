@@ -12,10 +12,23 @@ int process(FILE *file)
 	char *lineptr = NULL;
 	size_t n = 0;
 	unsigned int line_number = 0;
-	stack_t *stack = NULL; 
+	stack_t *stack = NULL;
+	ssize_t line = getline(&lineptr, &n, file);
 
-
-	while (getline(&lineptr, &n, file) != -1)
+	while (line == -1)
+	{
+		if (feof(file))
+		{
+			free(lineptr);
+			return (EXIT_SUCCESS);
+		}
+		else
+		{
+			free(lineptr);
+			return (EXIT_FAILURE);
+		}
+	}
+	while (line != -1)
 	{
 		line_number++;
 		tokens = tokenize(lineptr);
