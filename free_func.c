@@ -18,7 +18,6 @@ void free_tokens(char **tokens)
 	}
 }
 
-#include "monty.h"
 
 /**
  * free_stack - Frees the allocated memory for the stack
