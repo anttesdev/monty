@@ -12,6 +12,7 @@ int main(int argc, char *argv[])
 {
 	FILE *file = NULL;
 	int result = 0;
+	stack_t *stack = NULL;
 
 	if (argc != 2)
 	{
@@ -26,7 +27,8 @@ int main(int argc, char *argv[])
 		return (EXIT_FAILURE);
 	}
 
-	result = process(file);
+	result = process(file, &stack);
 	fclose(file);
+	free_stack(stack);
 	return (result);
 }
