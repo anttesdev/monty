@@ -21,7 +21,7 @@ int process(FILE *file, stack_t **stack)
 		tokens = tokenize(lineptr);
 		while (lineptr[index] != '\0' && isspace(lineptr[index]))
 			index++;
-		if (lineptr[index] == '#')
+		if (lineptr[index] == '#' || lineptr[index] == '\0')
 			continue;
 		if (line > 0 && lineptr[line - 1] == '\n')
 			lineptr[line - 1] = '\0';
