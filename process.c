@@ -13,15 +13,16 @@ int process(FILE *file, stack_t **stack)
 	size_t n = 0;
 	unsigned int line_number = 0;
 	ssize_t line;
-	int index;
+	size_t index;
 
 	while ((line = getline(&lineptr, &n, file)) != -1)
 	{
 		line_number++;
+		index = 0;
 		tokens = tokenize(lineptr);
 		while (lineptr[index] != '\0' && isspace(lineptr[index]))
 			index++;
-		if (lineptr[index] == '#' || lineptr[index] == '\0')
+		if (lineptr[index] == '#')
 			continue;
 		if (line > 0 && lineptr[line - 1] == '\n')
 			lineptr[line - 1] = '\0';
