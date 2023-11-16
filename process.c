@@ -3,6 +3,7 @@
 /**
  * process - a function to process a monty script line by line
  * @file: the monty script to be processed
+ * @stack: Double pointer to the top of the stack
  * Return: EXIT_SUCCESS on success and EXIT_FAILURE on failure
  */
 
