@@ -20,6 +20,8 @@ int process(FILE *file, stack_t **stack)
 		tokens = tokenize(lineptr);
 		if (line > 0 && lineptr[line - 1] == '\n')
 			lineptr[line - 1] = '\0';
+		if (tokens[0][0] == '#')
+			continue;
 		if (tokens[0] != NULL)
 		{
 			match(tokens[0], stack, line_number);
