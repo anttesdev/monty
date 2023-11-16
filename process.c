@@ -19,13 +19,13 @@ int process(FILE *file, stack_t **stack)
 	{
 		line_number++;
 		index = 0;
-		tokens = tokenize(lineptr);
 		while (lineptr[index] != '\0' && isspace(lineptr[index]))
 			index++;
 		if (lineptr[index] == '#')
 			continue;
 		if (line > 0 && lineptr[line - 1] == '\n')
 			lineptr[line - 1] = '\0';
+		tokens = tokenize(lineptr);
 		if (tokens[0] != NULL)
 		{
 			match(tokens[0], stack, line_number);
