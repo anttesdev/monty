@@ -22,6 +22,7 @@ void match(char *opcode, stack_t **stack, unsigned int line_number)
 		{"sub", sub},
 		{"div", divi},
 		{"mul", mult},
+		{"mod", modu},
 		{NULL, NULL}
 	};
 
